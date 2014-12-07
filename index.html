@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="slideshowApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Slideshow</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body ng-controller="SlideshowCtrl" ng-keyup="keyPress( $event )" class="theme-actree">
+
+  <div class="decks" ng-class="{'active': decksOpen}">
+    <h3>Decks</h3>
+    <ul>
+      <li ng-repeat="deck in decks" ng-click="loadDeck(deck)">
+        <h4>{{deck.title}}</h4>
+        <div class="container">
+          <section markdown data="deck.firstSlide" class="slide"></section>
+        </div>
+        <a href="#" ng-click="removeDeck($index)">Remove Deck</a>
+      </li>
+    </ul>
+    <a href="#" ng-click="clearAll()">Clear all</a>
+  </div>
+
+  <div class="container" ng-show="slides.length">
+    <section markdown data="slides[activeSlide]" class="slide"></section>
+    <div class="progress" style="width: {{progress}}"></div>
+  </div>
+
+  <div class="container" ng-hide="slides.length">
+    <div file-dropzone="[text/x-markdown, text/plain]" file="markdown", file-name="filename" dropzone-hover-class="over"
+         data-max-file-size="3" class="drophere">
+  </div>
+
+  <!-- build:js assets/optimized.js -->
+  <!--<script src="bower_components/jquery/dist/jquery.js"></script>-->
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/marked/lib/marked.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-file-dnd/dist/angular-file-dnd.js"></script>
+  <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
+  <script src="js/directives.js"></script>
+  <script src="js/script.js"></script>
+  <!--<script src="vendor/jquery.flexslider.js"></script>-->
+  <!-- endbuild -->
+</body>
+</html>

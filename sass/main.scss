@@ -1,0 +1,67 @@
+// Base
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-right: 15%;
+  padding-left: 15%;
+  background: white;
+  overflow: hidden;
+}
+
+.slide {
+  padding: 1em;
+}
+
+.progress {
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  height: 3px;
+}
+
+.drophere {
+  width: 50%;
+  height: 50%;
+  //border-radius: 5%;
+  border: 5px black dashed;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}
+
+.decks {
+  position: absolute;
+  width: 300px;
+  left: -300px;
+  background: black;
+  top: 0;
+  bottom: 0;
+  overflow: scroll;
+  z-index: 10;
+  transition: left 0.3s ease-in;
+  &.active {
+    left: 0px;
+  }
+}
+
+.decks .container {
+  position: static;
+
+  margin-left: 10px;
+  width: 280px;
+  height: 280px * 3 / 4;
+  font-size: 20%;
+  cursor: pointer;
+}
+
+// Themes
+@import "themes/actree";

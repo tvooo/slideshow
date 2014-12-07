@@ -1,0 +1,88 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700,900|Fira+Sans:400,700,400italic,700italic);
+
+$ff-sans: "Fira Sans", sans-serif;
+$ff-serif: "Merriweather", serif;
+$color-green: #8DBF41;
+$color-brown: #59261A;
+$color-text: #222222;
+
+.theme-actree {
+  font-family: $ff-sans;
+
+  .container {
+    border-top: 10px $color-green solid;
+    background: $color-text;
+    color: white;
+  }
+  .slide {
+    @extend %typography;
+    position: relative;
+
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .progress {
+    height: 10px;
+    background-color: $color-green;
+    -moz-transition: width 0.5s ease-in-out;
+  }
+  .drophere {
+    border-width: 10px;
+    border-color: $color-brown;
+    &.over {
+      border-color: $color-green;
+    }
+  }
+  .decks {
+    background: $color-green;
+    //color: white;
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li h4 {
+      line-height: 1em;
+      margin: 5px 10px;
+    }
+  }
+}
+
+html {
+  font-size: 2vmin;
+}
+
+body {
+  font-size: 100%;
+}
+
+%typography {
+  font-size: 1.5em;
+  h1, h2, h3, h4 {
+    font-family: $ff-serif;
+    text-align: center;
+  }
+  h1 {
+    font-size: 3em;
+    line-height:1.1em;
+    text-align: center;
+    color: $color-green;
+    text-shadow: 0px 1px 0px lighten($color-green, 10%),
+    0px -1px 0px darken($color-green, 10%);
+    //font-weight: 400;
+  }
+  h2 {
+    color: $color-brown;
+  }
+  p, ul, ol {
+    text-align: center;
+  }
+  /*h1 {
+  font-size: 5.9vw;
+}
+h2 {
+  font-size: 3.0vh;
+}
+p {
+  font-size: 2vmin;
+}*/
+}

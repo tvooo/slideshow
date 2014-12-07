@@ -1,0 +1,25 @@
+{
+  "name": "slideshow",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tvooo/slideshow",
+  "authors": [
+    "Tim von Oldenburg <tim@tvooo.de>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.23",
+    "marked": "~0.3.2",
+    "lodash": "~2.4.1",
+    "angular-file-dnd": "~1.0.4",
+    "angular-dragdrop": "~1.0.7",
+    "jquery": "~2.1.1"
+  }
+}

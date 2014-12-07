@@ -1,0 +1,112 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,700,900|Fira+Sans:400,700,400italic,700italic);
+*, *:after, *:before {
+  box-sizing: border-box; }
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-right: 15%;
+  padding-left: 15%;
+  background: white;
+  overflow: hidden; }
+
+.slide {
+  padding: 1em; }
+
+.progress {
+  position: absolute;
+  left: 0;
+  right: auto;
+  bottom: 0;
+  height: 3px; }
+
+.drophere {
+  width: 50%;
+  height: 50%;
+  border: 5px black dashed;
+  position: absolute;
+  top: 25%;
+  left: 25%; }
+
+.decks {
+  position: absolute;
+  width: 300px;
+  left: -300px;
+  background: black;
+  top: 0;
+  bottom: 0;
+  overflow: scroll;
+  z-index: 10;
+  transition: left 0.3s ease-in; }
+  .decks.active {
+    left: 0px; }
+
+.decks .container {
+  position: static;
+  margin-left: 10px;
+  width: 280px;
+  height: 210px;
+  font-size: 20%;
+  cursor: pointer; }
+
+.theme-actree {
+  font-family: "Fira Sans", sans-serif; }
+  .theme-actree .container {
+    border-top: 10px #8dbf41 solid;
+    background: #222222;
+    color: white; }
+  .theme-actree .slide {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); }
+  .theme-actree .progress {
+    height: 10px;
+    background-color: #8dbf41;
+    -moz-transition: width 0.5s ease-in-out; }
+  .theme-actree .drophere {
+    border-width: 10px;
+    border-color: #59261a; }
+    .theme-actree .drophere.over {
+      border-color: #8dbf41; }
+  .theme-actree .decks {
+    background: #8dbf41; }
+    .theme-actree .decks ul {
+      list-style: none;
+      padding: 0; }
+    .theme-actree .decks li h4 {
+      line-height: 1em;
+      margin: 5px 10px; }
+
+html {
+  font-size: 2vmin; }
+
+body {
+  font-size: 100%; }
+
+.theme-actree .slide {
+  font-size: 1.5em;
+  /*h1 {
+  font-size: 5.9vw;
+}
+h2 {
+  font-size: 3.0vh;
+}
+p {
+  font-size: 2vmin;
+}*/ }
+  .theme-actree .slide h1, .theme-actree .slide h2, .theme-actree .slide h3, .theme-actree .slide h4 {
+    font-family: "Merriweather", serif;
+    text-align: center; }
+  .theme-actree .slide h1 {
+    font-size: 3em;
+    line-height: 1.1em;
+    text-align: center;
+    color: #8dbf41;
+    text-shadow: 0px 1px 0px #a4cc67, 0px -1px 0px #719934; }
+  .theme-actree .slide h2 {
+    color: #59261a; }
+  .theme-actree .slide p, .theme-actree .slide ul, .theme-actree .slide ol {
+    text-align: center; }
